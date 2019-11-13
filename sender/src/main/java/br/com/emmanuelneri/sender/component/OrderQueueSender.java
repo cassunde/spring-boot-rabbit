@@ -15,6 +15,15 @@ public class OrderQueueSender {
     private Queue queue;
 
     public void send(String order) {
-        rabbitTemplate.convertAndSend(this.queue.getName(), order);
+
+        System.out.println(this.queue.getName());
+
+        if(order.contains("Correto")){
+
+            rabbitTemplate.convertAndSend("OrderQueue", order);
+        }else{
+
+            rabbitTemplate.convertAndSend("FailOrderQueue", order);
+        }
     }
 }

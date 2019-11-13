@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ConsumerAppConfig {
 
     public static void main(String[] args) {
+
         SpringApplication.run(ConsumerAppConfig.class, args);
     }
-
 }
